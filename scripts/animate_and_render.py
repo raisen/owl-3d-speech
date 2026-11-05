@@ -44,14 +44,14 @@ except ImportError:
 # Viseme base pitch angles in degrees (negative tilts mandible downward to open)
 VISEME_ANGLES = {
     "X": 0.0,    # Closed / resting
-    "A": 0.0,    # Plosives / bilabials (P, B, M)
-    "B": -7.0,   # Consonants (K, S, T)
-    "C": -16.0,  # Moderate open vowels (EH, AE)
-    "D": -28.0,  # Wide open vowels (AA, AO, AW)
-    "E": -13.0,  # Mid vowels (ER, IH)
-    "F": -12.0,  # Fricatives / labiodentals (F, V)
-    "G": -8.0,   # Upper-palatal (L, D)
-    "H": -20.0,  # Wide open breath (W, OO)
+    "A": -8.0,   # Slight mouth shape
+    "B": -18.0,  # Consonants
+    "C": -36.0,  # Moderate open vowels
+    "D": -52.0,  # Wide open vowels (AA, AO, AW)
+    "E": -28.0,  # Mid vowels
+    "F": -22.0,  # Fricatives
+    "G": -16.0,  # Palatal
+    "H": -45.0,  # Wide open breath (W, OO)
 }
 
 
@@ -174,6 +174,14 @@ def animate_owl(arm_obj, mouth_cues, envelope_map, duration, fps=30.0, seed=42):
     scene.frame_end = total_frames
     scene.render.fps = int(fps)
 
+    # Clear any previous animation data to prevent quaternion track conflicts
+    if arm_obj.animation_data:
+        arm_obj.animation_data_clear()
+
+    # Ensure all pose bones are strictly in XYZ Euler rotation mode so keyframing rotation_euler works
+    for bone in arm_obj.pose.bones:
+        bone.rotation_mode = 'XYZ'
+
     pose_bones = arm_obj.pose.bones
     b_beak = pose_bones.get("Beak_Lower")
     b_head = pose_bones.get("Head")
@@ -205,8 +213,8 @@ def animate_owl(arm_obj, mouth_cues, envelope_map, duration, fps=30.0, seed=42):
             base_deg = VISEME_ANGLES.get(active_val, 0.0)
             rms = get_rms_at_time(envelope_map, t)
 
-            # Dynamic RMS scaling: Angle = Base * (0.4 + 0.6 * RMS_norm)
-            scaled_deg = base_deg * (0.40 + 0.60 * rms)
+            # Dynamic RMS scaling: Angle = Base * (0.60 + 0.40 * RMS_norm)
+            scaled_deg = base_deg * (0.60 + 0.40 * rms)
             pitch_rad = math.radians(scaled_deg)
 
             b_beak.rotation_euler = (pitch_rad, 0.0, 0.0)
