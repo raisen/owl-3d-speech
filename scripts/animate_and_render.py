@@ -41,17 +41,17 @@ except ImportError:
     IN_BLENDER = False
 
 
-# Viseme base pitch angles in degrees (negative tilts mandible downward to open)
+# Viseme base pitch angles in degrees (positive tilts mandible downward to open)
 VISEME_ANGLES = {
     "X": 0.0,    # Closed / resting
-    "A": -8.0,   # Slight mouth shape
-    "B": -18.0,  # Consonants
-    "C": -36.0,  # Moderate open vowels
-    "D": -52.0,  # Wide open vowels (AA, AO, AW)
-    "E": -28.0,  # Mid vowels
-    "F": -22.0,  # Fricatives
-    "G": -16.0,  # Palatal
-    "H": -45.0,  # Wide open breath (W, OO)
+    "A": 8.0,    # Slight mouth shape
+    "B": 18.0,   # Consonants
+    "C": 36.0,   # Moderate open vowels
+    "D": 50.0,   # Wide open vowels (AA, AO, AW)
+    "E": 28.0,   # Mid vowels
+    "F": 22.0,   # Fricatives
+    "G": 16.0,   # Palatal
+    "H": 42.0,   # Wide open breath (W, OO)
 }
 
 
