@@ -1,0 +1,60 @@
+# ==============================================================================
+# SAMPLE POEMS FOR OWL 3D SPEECH SYNTHESIS
+# ==============================================================================
+
+[THE_OWL]
+Title: The Owl (Song)
+Author: Alfred, Lord Tennyson
+
+When cats run home and light is come,
+And dew is cold upon the ground,
+And the far-off stream is dumb,
+And the whirring sail goes round,
+Alone and warming his five wits,
+The white owl in the belfry sits.
+
+When merry milkmaids click the latch,
+And rarely smells the new-mown hay,
+And the cock hath sung beneath the thatch
+Twice or thrice his roundelay,
+Twice or thrice his roundelay;
+Alone and warming his five wits,
+The white owl in the belfry sits.
+
+[IF]
+Title: If—
+Author: Rudyard Kipling
+
+If you can keep your head when all about you
+Are losing theirs and blaming it on you,
+If you can trust yourself when all men doubt you,
+But make allowance for their doubting too;
+If you can wait and not be tired by waiting,
+Or being lied about, don't deal in lies,
+Or being hated, don't give way to hating,
+And yet don't look too good, nor talk too wise.
+
+[WISE_OLD_OWL]
+Title: A Wise Old Owl
+Author: Traditional Nursery Rhyme
+
+A wise old owl sat in an oak,
+The more he heard, the less he spoke;
+The less he spoke, the more he heard;
+Why aren't we all like that wise old bird?
+
+[OWL_AND_PUSSYCAT]
+Title: The Owl and the Pussy-cat
+Author: Edward Lear
+
+The Owl and the Pussy-cat went to sea
+In a beautiful pea-green boat,
+They took some honey, and plenty of money,
+Wrapped up in a five-pound note.
+The Owl looked up to the stars above,
+And sang to a small guitar,
+"O lovely Pussy! O Pussy, my love,
+What a beautiful Pussy you are,
+You are,
+You are!
+What a beautiful Pussy you are!"
